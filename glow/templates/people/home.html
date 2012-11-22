@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block title %}{{request.pageTitle}}{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/people_home.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/photo.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	{% include "people/follow_js.html" %}
+	
+	$("#delete-photo a").each(function(event)
+	{
+		$(this).click(function()
+		{		
+			if (confirm("确定删除这张照片?") == true)
+			{
+				url = $(this).attr('value');
+				delete_photo(url)
+			}
+        });
+    });
+    
+    function delete_photo(url)
+    {
+        $.post(url,
+        {},
+        function(data)
+        {
+        	if(data.status=="success")
+        	{
+        		window.location.href='http://www.grnglow.com/people/{{people.id}}/';
+        	}
+        	else
+        	{
+        		alert("糟糕！删除不成功！请再试一次。");
+        	}
+        },
+        "json"
+    );}
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="content-area" style="float:left;width:inherit;">
+
+{% include "people/nav.html" %}
+
+<div class="photo-list">
+	{% for p_item in p_items %} 
+	<div class="photo-grid-wrapper">
+		{% for photo in p_item %}
+		<div class="photo-grid">
+		<a href="http://www.grnglow.com/photos/{{people.id}}/{{photo.id}}/">
+		<img src={{photo.thumb_loc}}>
+		</a>
+		<div class="photo-caption">
+		{{photo.caption}}
+		</div>
+		<div class="tags font12">
+			{% for tag in photo.tag_list %} 
+			<span class="tag tag-link"><a href="http://www.grnglow.com/search/?q={{tag.name}}">{{tag.name}}</a></span>
+			{% endfor %}
+		</div>
+		<div style="margin-top:10px;" class="set-details-text">
+		上传于
+		<span>{{photo.date_posted}}</span>
+		</div>
+		<div style="clear:both;">
+			<div class="set-details-text">
+			{{photo.like_count}}人喜欢
+			</div>
+			{% if is_myPage %}
+			<div style="font-size:12px;float:right;" id="delete-photo">
+			<span class="delete-link"><a value="http://www.grnglow.com/photos/{{people.id}}/{{photo.id}}/delete/" href="#" title="删除这张照片?">&gt;删除照片</a></span>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endfor %}
+</div>
+
+<div class="album-list-sidebar">
+	{% for album in album_list %}
+	<div class="album-grid">
+		<div class="set-case">
+		<a href="http://www.grnglow.com/photos/{{people.id}}/albums/{{album.id}}/">
+		<img src={{album.cover_loc}}>
+		</a>
+		</div>
+		<div class="set-details">
+			<div class="set-details-title blue-link">
+			<a href="http://www.grnglow.com/photos/{{people.id}}/albums/{{album.id}}/" title={{album.topic}}>{{album.topic}}</a>
+			</div>
+			<div class="set-details-text">
+			{{album.photo_count}}张照片
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+
+	{% if album_too_more %}
+	<div class="green-link" style="font-size:14px;clear:both;padding-left:12px;padding-top:20px;">
+	<a href="http://www.grnglow.com/photos/{{people.id}}/albums/" title="查看更多相册">查看更多...</a>
+	</div>
+	{% endif %}
+</div>
+
+</div>
+{% endblock %}

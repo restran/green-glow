@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{request.pageTitle}}{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/people_home.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/photo.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/profile.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	{% include "people/follow_js.html" %}
+});
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="content-area" style="float:left;width:inherit;">
+
+{% include "people/nav.html" %}
+
+<div style="clear:both;float:left;"
+	<div class="item">
+		<label>名号:</label>
+		<span class="user-info">{{people.name}}</span>
+	<div class="item">
+		<label>头像:</label>
+		<img src={{people.avatar_loc}}>
+	</div>
+
+	<div class="item">
+		<label>邮箱:</label>
+		<span class="user-info">{{people.email}}</span>
+	</div>
+    
+	<div class="item">
+		<label>常居地:</label>
+		<span class="user-info">{{people.city}}</span>
+	</div>
+
+</div>
+
+</div>
+{% endblock %}

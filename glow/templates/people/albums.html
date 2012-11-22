@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}{{request.pageTitle}}{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/people_home.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	{% include "people/follow_js.html" %}
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="content-area" style="float:left;width:inherit;">
+
+{% include "people/nav.html" %}
+
+{% if is_myPage %}
+<div style="margin-top:20px;clear:both;float:left;width:700px;">
+{% else %}
+<div style="margin-top:20px;clear:both;float:left;width:auto;">
+{% endif %}
+
+{% for album in album_list %}
+<div style="float:left;margin-bottom:30px;width:305px;">
+<div class="set-case">
+<a href="http://www.grnglow.com/photos/{{people.id}}/albums/{{album.id}}/">
+<img src={{album.cover_loc}}>
+</a>
+</div>
+<div class="set-details">
+<div class="set-details-title blue-link">
+<a href="http://www.grnglow.com/photos/{{people.id}}/albums/{{album.id}}/" title={{album.topic}}>{{album.topic}}</a>
+</div>
+<div class="set-details-text">
+{{album.photo_count}}张照片
+</div>
+
+<div class="set-details-text">
+创建于{{album.date_created|date:"F j, Y"}}
+</div>
+</div>
+{% if is_myPage %}
+<div class="blue-link" style="clear:both;float:left;font-size:12px">
+<span style="margin-left:10px"><a href="http://www.grnglow.com/photos/{{people.id}}/albums/{{album.id}}/edit/" title="修改相册属性">&gt;修改相册属性</a></span>
+<span style="margin-left:10px"><a href="http://www.grnglow.com/photos/upload/" title="添加照片">&gt;添加照片</a></span>
+</div>
+{% endif %}
+</div>
+{% endfor %}
+
+</div>
+
+{% if is_myPage %}
+<div class="green-link" style="float:right;margin-top:20px;margin-right:100px;">
+<a href="http://www.grnglow.com/photos/{{people.id}}/albums/create/" title="创建新相册">
+<span style="font-weight:bold">+</span>创建新相册</a>
+</div>
+{% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}{{request.pageTitle}}{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/people_home.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/photo.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/explore.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	{% include "people/follow_js.html" %}
+});
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="content-area" style="float:left;width:inherit;">
+
+{% include "people/nav.html" %}
+
+<div class="follow-list" style="clear:both;float:left;margin-top:30px;width:500px;">
+{% if is_myFollow %}
+	{% for f in follow_list %}
+	<div class="comment-item">
+		<div class="fleft">
+		<a href="http://www.grnglow.com/people/{{f.be_followed_user.id}}/">
+		<img title="{{f.be_followed_user.name}}" src="{{f.be_followed_user.avatar_square_loc}}">
+		</a>
+		</div>
+	
+		<div class="comment-text-wrapper" style="width:450px;">
+			<div class="comment-head" style="width:432px;">
+			<span class="blue-link" style="margin-left:10px;"><a title="{{f.be_followed_user.name}}" href="http://www.grnglow.com/people/{{f.be_followed_user.id}}/">{{f.be_followed_user.name}}</a></span>
+			<span class="fright">于{{f.date_followed}}添加关注</span>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+{% else %}
+	{% for f in follow_list %}
+	<div class="comment-item">
+		<div class="fleft">
+		<a href="http://www.grnglow.com/people/{{f.follower.id}}/">
+		<img title="{{f.follower.name}}" src="{{f.follower.avatar_square_loc}}">
+		</a>
+		</div>
+	
+		<div class="comment-text-wrapper" style="width:450px;">
+			<div class="comment-head" style="width:432px;">
+			<span class="blue-link" style="margin-left:10px;"><a title="{{f.follower.name}}" href="http://www.grnglow.com/people/{{f.follower.id}}/">{{f.follower.name}}</a></span>
+			<span class="fright">于{{f.date_followed}}添加关注</span>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+{% endif %}
+</div>
+
+<div class="green-link explore-nav-text fleft" style="margin-top:30px;margin-left:120px;">
+{% if is_myPage %}
+	{% if is_myFollow %}
+	<span class="cfleft on" style="margin-bottom:15px;"><a href="http://www.grnglow.com/people/{{people.id}}/follow/" title="我关注的人">我关注的人</a></span>
+	<span class="cfleft off" style=""><a href="http://www.grnglow.com/people/{{people.id}}/follow/follow_me/" title="关注我的人">关注我的人</a></span>
+	{% else %}
+	<span class="cfleft off" style="margin-bottom:15px;"><a href="http://www.grnglow.com/people/{{people.id}}/follow/" title="我关注的人">我关注的人</a></span>
+	<span class="cfleft on" style=""><a href="http://www.grnglow.com/people/{{people.id}}/follow/follow_me/" title="关注我的人">关注我的人</a></span>
+	{% endif %}
+{% else %}
+	{% if is_myFollow %}
+	<span class="cfleft on" style="margin-bottom:15px;"><a href="http://www.grnglow.com/people/{{people.id}}/follow/" title="{{people.name}}关注的人">{{people.name}}关注的人</a></span>
+	<span class="cfleft off" style=""><a href="http://www.grnglow.com/people/{{people.id}}/follow/follow_me/" title="关注{{people.name}}的人">关注{{people.name}}的人</a></span>
+	{% else %}
+	<span class="cfleft off" style="margin-bottom:15px;"><a href="http://www.grnglow.com/people/{{people.id}}/follow/" title="{{people.name}}关注的人">{{people.name}}关注的人</a></span>
+	<span class="cfleft on" style=""><a href="http://www.grnglow.com/people/{{people.id}}/follow/follow_me/" title="关注{{people.name}}的人">关注{{people.name}}的人</a></span>
+	{% endif %}
+{% endif %}
+</div>
+
+
+</div>
+{% endblock %}

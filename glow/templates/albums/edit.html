@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}修改相册属性{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area" style="float:left;width:inherit;">
+<h1 style="margin-top:0;">修改相册属性 / {{album.topic}}</h1>
+<form name="updateAlbumForm" method="post" action="">{% csrf_token %}
+
+	<div style="margin-bottom:10px;">
+    <label>相册名称</label>
+    <input id="title" name="topic" type="text" placeholder="给相册取个名字吧" class="basic-input" style="width:400px;" maxlength="60" value="{{album.topic}}">
+    <span class="validate-error">{{form.topic.errors.as_text}}</span>
+	</div>
+	
+	<div>
+    <label>相册描述</label>
+	<textarea name="caption" rows="10" class="basic-input" style="width:400px;height:auto" placeholder="描述一下相册的主题吧" value="">{{album.caption}}</textarea>
+	</div>
+    
+    <div class="item"  style="margin-top:25px">
+    <label>&nbsp;</label>
+    <input type="submit" name="update" value="更新" id="update" class="btn-white-submit" style="font-weight:bold" title="更新相册属性">
+    <input type="submit" name="cancel" value="取消" id="cancel" class="btn-white-submit" style="font-weight:normal" title="取消">
+    </div>
+
+</form>
+
+</div>
+{% endblock %}

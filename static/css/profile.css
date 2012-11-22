@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+.user-info
+{
+	display: inline-block;
+	text-align: left;
+	width: 60px;
+	font-size: 14px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+label
+{
+	font-size: 14px;
+	color: #060;
+	display: inline-block;
+	float: left;
+	margin-right: 15px;
+	text-align: right;
+	width: 100px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+a
+{
+	font:12px;
+}
+
+.message
+{
+	font-size: 14px;
+	font-weight: bold;
+	border: 1px solid #FAF3CA;
+	padding:10px;
+	background: #FFFADC;
+	margin-bottom:10px;
+}

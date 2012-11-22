@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+.square-photo-grid-wrapper
+{
+	clear:both;
+	float:left;
+	padding-bottom:5px;
+}
+
+.square-photo-grid
+{
+	padding-right:5px;
+	float:left;
+	width:75px;
+}

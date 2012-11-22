@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+.p-nav
+{
+	clear:both;
+	font-size:14px;
+	float:left;
+	margin-right:5px;
+	bottom:0px;
+}
+
+.p-menu
+{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.p-menu li 
+{
+	float:left;
+	display:block;
+	margin:0px 0px 0px 12px;
+	line-height:24px;
+}
+
+h2
+{
+	word-wrap: break-word;
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+	color: #494949;
+	margin:0;
+	padding:0;
+}
+
+.photo-list
+{
+	clear:both;
+	padding-top:20px;
+	float:left;
+	width:640px;
+}
+.photo-grid-wrapper
+{
+	clear:both;
+	float:left;
+	padding-bottom:30px;
+}
+
+.photo-grid
+{
+	padding-right:75px;
+	float:left;
+	width:240px;
+}
+.photo-caption
+{
+	margin-top:5px;
+	width:240px;
+	color:#666;
+	font-size:12px;
+	line-height:120%;
+}
+
+.album-list-sidebar
+{
+	border-radius: 3px;
+	background-color:#F8F8F8;
+	margin-top:20px;
+	padding:20px;
+	float:right;
+}
+
+.album-grid
+{
+	clear:both;
+}
+
+.set-case
+{
+	float:left;
+	background:url(/static/img/album_bgd.png) no-repeat;
+	width: 107px;
+	height: 107px;
+	position: relative;
+	text-align:center;
+}
+.set-case img
+{
+	padding-top:16px;
+}
+
+.set-details
+{
+	padding-top:12px;
+	margin-left:10px;
+	margin-right:5px;
+	float:left;
+	width:120px;
+	text-align:left;
+}
+.set-details-title
+{
+	font-size:14px;
+	float:left;
+	padding-bottom:15px;
+}
+
+.set-details-text
+{
+	clear:both;
+	color: #999;
+	float: left;
+	padding-bottom:5px;
+	font-size:12px;
+}

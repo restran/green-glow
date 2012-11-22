@@ -1,0 +1,340 @@
+@charset "utf-8";
+/* CSS Document */
+body 
+{
+	font-family:Tahoma,Geneva,sans-serif;
+	background:#FFF;
+	color:#555;
+}
+
+/*页面层容器*/
+.container 
+{
+	width:950px;
+	margin:15px auto;/*上下边距15，左右自动，也就是居中*/
+}
+
+.header
+{
+	float:left;
+	padding-bottom:10px;
+	border-bottom:1px dashed #CCC; /*画一条浅灰色虚线*/
+	width:inherit;
+	height:35px;
+	/*border:1px dashed #000;*/
+}
+
+.logo
+{
+	float: left;
+	width: 160px;
+	height: 32px;
+	/*border:1px dashed #E00;*/
+}
+/*去除IE浏览器中带图片链接的边框*/
+a img{border: none;}
+a img:hover{border: none;}
+
+.searchform
+{
+	margin-left:10px;
+	margin-right:0px;
+	margin-top:0px;
+	/*border:1px dashed #EE0;*/
+	float:left;
+	width:320px;
+	height:32px;
+	line-height:32px;
+	display: block;
+}
+.box-srh
+{
+	/*width: 270px;
+	padding: 5px;
+	height: 18px;
+	font-size: 14px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #C9C9C9;*/
+	width:290px;
+	height:16px;
+	line-height:16px;
+	font-size:14px;
+	padding:6px 6px;
+	border: 1px solid gainsboro;
+	border-radius: 3px;
+}
+.btn-srh
+{
+	width:23px;
+	height:23px;
+	padding:3px 2px;
+	border:0;
+	background:transparent url(/static/img/btn-srh.gif) no-repeat;
+	cursor:pointer;
+	margin-left:-32px;
+}
+/*
+.btn-srh
+{
+	margin-left:5px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 5px 15px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	
+	color: #3fa156;
+	background-color: #f3faf3;
+	border: 1px solid #84b76c;
+}
+
+.btn-srh:hover
+{
+	background-color: #ffffff;
+	border-color: #6AAD54;
+}
+*/
+
+.nav 
+{
+	font-size:14px;
+	float:left;
+	margin-left:5px;
+	margin-top:0px;
+	/*border:1px dashed #E0E;*/
+	position:relative;
+	bottom:0px;
+}
+
+.account
+{
+	margin-top:0px;
+	font-size:14px;
+	float:right;
+	/*border:1px dashed #00E;*/
+	padding-bottom:0px;
+}
+
+.menu
+{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.menu li 
+{
+	float:left;
+	display:block;
+	margin:0px 0px 0px 10px;
+	line-height:32px;
+}
+
+.content
+{
+	clear:both;/*清除左右的浮动*/
+	float:left;
+	min-height:420px;
+	margin:0 auto;
+	width:950px;
+	/*border:1px dashed #0EE;*/
+}
+
+.content-area
+{
+	margin:20px auto;
+	margin-bottom:50px;
+}
+
+.footer
+{
+
+	clear:both;
+	padding-top:5px;
+	padding-bottom:15px;
+	border-top:1px dashed #CCC; /*画一条浅灰色虚线*/
+	font-size:12px;
+	color:#999;
+}
+
+.cfleft
+{
+	clear:both;
+	float:left;
+}
+.cfright
+{
+	clear:both;
+	float:right;
+}
+.fleft
+{
+	float:left;
+}
+.fright
+{
+	float:right;
+}
+
+.font12
+{
+	font-size:12px;
+}
+.blue-link
+{
+}
+.blue-link a:link
+{
+	color:#369;
+	text-decoration:none;
+}
+
+.blue-link a:visited
+{
+	/*color:#669;*/
+	color:#369;
+	text-decoration:none;
+}
+.blue-link a:hover
+{
+	color:#fff;
+	text-decoration:none;
+	/*background-color:#039;*/
+	background-color:#0063DC;
+}
+.blue-link a:active/*鼠标点击的瞬间的状态*/
+{
+	color:#FFF;
+	background-color:#ff9933;
+	text-decoration:none;
+}
+
+.green-link
+{
+}
+.green-link a:link/*未被访问前的状态*/
+{
+	/*color:#219A44;*/
+	color: #0c7823;
+	text-decoration:none;
+}
+
+.green-link a:visited/*被访问后的状态*/
+{
+	color: #0c7823;
+	text-decoration:none;
+}
+.green-link a:hover/*鼠标悬停在上面的状态*/
+{
+	background-color:#219A44;
+	/*background:#0c7823;*/
+	color:#FFF;
+}
+.green-link a:active/*鼠标点击的瞬间的状态*/
+{
+	color:#FFF;
+	background:#ff9933;
+	text-decoration:none;
+}
+
+/*删除照片或相册的链接按钮*/
+.delete-link
+{
+}
+.delete-link a:link
+{
+	color: #BBB;
+	text-decoration:none;
+}
+
+.delete-link a:visited
+{
+	color: #BBB;
+	text-decoration:none;
+}
+.delete-link a:hover
+{
+	color:#FFF;
+	background: #F33;
+}
+.delete-link a:active
+{
+	color:#FFF;
+	background:#F99;
+	text-decoration:none;
+}
+
+/*喜欢和添加关注的链接*/
+.red-link
+{
+}
+.red-link a:link
+{	
+	color:#FF7676;
+	background:#ffdddd;
+	text-decoration:none;
+	text-align:center;
+	border:1px solid #ffa4a4;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	padding:2px 4px 3px 4px;
+	margin-top: 2px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.red-link a:visited
+{
+	color:#FF7676;
+	background:#ffdddd;
+	text-decoration:none;
+	text-align:center;
+	border:1px solid #ffa4a4;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	padding:2px 4px 3px 4px;
+	margin-top: 2px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.red-link a:hover
+{
+	color:#FFF;
+	background:#ff9494;
+	border:1px solid #f04242;
+}
+.red-link a:active
+{
+	color:#FFF;
+	background:#ffb6b6;
+	border:1px solid #f68b8b;
+	text-decoration:none;
+}
+
+h1
+{
+	word-wrap: break-word;
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	color: #494949;
+	/*margin-bottom:30px;*/
+	/*border:1px dashed #000;*/
+	padding: 0 0 15px 0;
+	line-height: 1.1;
+}
+
+h2
+{
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	color:#595959;
+	padding: 0 0 15px 0;
+	line-height: 1.1;
+}

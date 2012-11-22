@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.album-info-text
+{
+	color: #999;
+	float: left;
+	padding-bottom:5px;
+	font-size:12px;
+}

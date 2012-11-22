@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{request.pageTitle}}{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/people_home.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/photo.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/like.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	{% include "people/follow_js.html" %}
+});
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="content-area" style="float:left;width:inherit;">
+
+{% include "people/nav.html" %}
+
+<div style="clear:both;float:left;">
+<div class="photo-list" style="width:inherit;">
+	{% for p_item in p_items %} 
+	<div class="square-photo-grid-wrapper">
+	{% for photo in p_item %}
+		<div class="square-photo-grid">
+			<a title="来自{{photo.owner.name}}" href="http://www.grnglow.com/photos/{{photo.owner.id}}/{{photo.id}}/">
+			<img src={{photo.square_loc}}>
+			</a>
+		</div>
+	{% endfor %}
+	</div>
+	{% endfor %}
+</div>
+</div>
+
+</div>
+{% endblock %}

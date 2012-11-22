@@ -1,0 +1,44 @@
+<div class="fleft" style="width:inherit;">
+<div class="fleft">
+<img src={{people.avatar_square_loc}}>
+</div>
+<div class="fleft">
+<div class="fleft" style="margin-left:10px;">
+<h2>{{request.pageTitle}}</h2>
+</div>
+<div class="p-nav">
+	<ul class="p-menu blue-link">
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/">照片</a></li>
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/albums/">相册</a></li>
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/tags/">标签</a></li>
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/likes/">喜欢</a></li>	
+		{% if is_myPage %}
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/comments/">评论</a></li>
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/follow/">关注的人</a></li>
+		{% else %}
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/follow/">关注的人</a></li>
+		<li><a href="http://www.grnglow.com/people/{{people.id}}/profile/">个人资料</a></li>
+		{% endif %}
+	</ul>
+</div>
+</div>
+<div class="fright" style="margin-top:10px;font-size:12px;">
+{% if not is_myPage and request.user.is_authenticated %}
+	{% if people.i_follow %}
+	<span class="red-link fright" id="mark-follow" style="display:none">
+	<a title="添加关注?" href="javascript:void(0);"><span style="font-weight:bold;">+</span>添加关注</a>
+	</span>
+	<span class="red-link fright" id="cancel-follow">
+	<a title="取消关注?" href="javascript:void(0);"><span style="font-weight:bold;">--</span>取消关注</a>
+	</span>
+	{% else %}
+	<span class="red-link fright" id="mark-follow">
+	<a title="添加关注?" href="javascript:void(0);"><span style="font-weight:bold;">+</span>添加关注</a>
+	</span>
+	<span class="red-link fright" id="cancel-follow" style="display:none">
+	<a title="取消关注?" href="javascript:void(0);"><span style="font-weight:bold;">--</span>取消关注</a>
+	</span>
+	{% endif %}
+{% endif %}
+</div>
+</div>

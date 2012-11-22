@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}上传照片{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.MultiFile.pack.js"></script>
+<script type="text/javascript">file_count=0</script>
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>第一步：上传照片</h1>
+
+<div id="photos-upload">
+<form action="" method="post" enctype="multipart/form-data" id="upload_form">{% csrf_token %}
+
+<div class="item">
+<label style="width:100px;">选择相册:</label>
+<select id="album_select" name="album_id" class="basic-select" style="width:200px">
+{% for album in album_list %}
+<option value={{ album.id }}>{{ album.topic }}</option>
+{% endfor %}
+</select>
+</div>
+
+<div class="item">
+<label style="width:100px;">选择照片:</label>
+<div style="float:left;">
+<input type="file" class="multi" accept="jpg|jpeg" onchange="javascript:name=file_count++"/>
+</div>
+
+<div style="clear:both;height:1px">
+</div>
+<div class="item" style="margin-top:30px">
+<label style="width:100px;">&nbsp;</label>
+<input type="submit" value="上传" id="button" class="btn-submit enabled" title="上传这些照片">
+</div>
+</div>
+
+</form>
+</div>
+
+</div>
+{% endblock %}

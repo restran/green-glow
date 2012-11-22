@@ -1,0 +1,169 @@
+.opt-bar-line
+{
+	font-size:12px;
+	margin-bottom:10px;
+	padding-bottom:15px;
+}
+.opt-bar-line .opt-left
+{
+	color: #999;
+	position: absolute;
+}
+.opt-bar-line .opt-mid
+{
+	position: absolute;
+	margin-left: 265px;
+}
+
+.comment
+{
+	font-size:14px;
+	margin-top:50px;
+}
+.comment-item
+{
+	float:left;
+	margin-bottom:25px;
+}
+
+.comment-text-wrapper
+{
+	float:left;
+	width:550px;
+	font-size:12px;
+}
+.comment-head
+{
+	float:left;
+	margin-left:15px;
+	/*background:#eeffed;*/
+	background:#f5fdfe;
+	color:#666;
+	padding:3px 5px 3px 5px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	width:532px;
+}
+.comment-text
+{
+	clear:both;
+	float:left;
+	margin-left:35px;
+	margin-top:15px;
+	font:12px Arial,Helvetica,sans-serif;
+	line-height: 162%;
+}
+.photo-opt
+{
+	font-size:12px;
+	margin:50px auto;
+}
+
+.tags
+{
+	clear:both;
+	float:left;
+	margin-top:10px;
+}
+
+.tag
+{
+	float:left;
+	margin-right:8px;
+	margin-bottom:12px;
+}
+
+.tag-link a:link/*未被访问前的状态*/
+{
+
+
+	/*color: #060;*/
+	/*border-right: 1px solid #AFA;
+	border-bottom: 1px solid #AFA;*/
+	/*background: #EFE;*/
+	color:#84b76c;
+	background:#f3faf3;
+	text-decoration:none;
+	/*font-size: 12px;*/
+	text-align:center;
+	border:1px solid #cae3c0;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	padding:2px 3px 3px 3px;
+	margin-top: 2px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+.tag-link a:visited
+{
+	color:#84b76c;
+	background:#f3faf3;
+	text-decoration: none;
+	/*font-size: 12px;*/
+	text-align: center;
+	border:1px solid #cae3c0;
+	padding:2px 3px 3px 3px;
+	cursor: pointer;
+	white-space: nowrap;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.tag-link a:hover/*鼠标悬停在上面的状态*/
+{
+	/*color: #676767;
+	background:#fafafa;
+	border:1px solid #dbdbdb;*/
+	
+	color: #f3faf3;
+	background:#95c87d;
+	border:1px solid #84b76c;
+	text-decoration:none;
+}
+.tag-link a:active/*鼠标点击的瞬间的状态*/
+{
+	background:#ff9933;
+	color:#FFF;
+	text-decoration:none;
+	border:1px solid #ff9933;
+}
+
+.introduction-text
+{
+	float:left;
+	font:14px Arial,Helvetica,sans-serif;
+	color:#060;
+	line-height:150%;
+}
+
+.photo-info-case
+{
+	clear:both;
+	float:left;
+	margin-top:10px;
+}
+.photo-info-slide
+{
+	color:#555;
+	float:left;
+	margin-top:67px;
+	margin-left:40px;
+	width:310px;
+}
+.photo-upload-date
+{
+	float:left;
+	margin-left:10px;
+	font-size:12px;
+	width:250px;
+}
+.photo-info-div
+{
+	clear:both;
+	float:left;
+	font-size:14px;
+	margin-top:50px;
+	width:310px;
+}
