@@ -103,5 +103,3 @@ def calculateScore(self):
 ### 照片详细页面
 
 ![img4.jpg](doc/img4.jpg "")
-
-------
