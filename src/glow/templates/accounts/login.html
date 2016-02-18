@@ -1,0 +1,40 @@
+{% extends "base_basic.html" %}
+{% block title %}登录绿光{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>登录绿光</h1>
+<form name="loginform" method="post" action="{{ request.HOME_PAGE_URL }}accounts/login/">{% csrf_token %}
+
+    {% if login_failed %}
+    <div class="item">
+    <label>&nbsp;</label>
+    <span class="validate-error" style="margin-left:0;">你的email和密码不符，请再试一次</span>
+    </div>
+    {% endif %}
+    
+    <div class="item">
+    <label>邮箱</label>
+    <input id="email" name="email" type="text" class="basic-input" maxlength="60" value={{ p_email }}>
+    <span class="tip"></span>
+    </div>
+
+    <div class="item">
+    <label>密码</label>
+    <input id="password" name="password" type="password" class="basic-input" maxlength="20">
+    <span class="tip"></span>
+    </div>
+    
+    <div class="item"  style="margin-top:25px">
+    <label>&nbsp;</label>
+    <input type="submit" value="登录" id="button" class="btn-submit enabled" title="登录绿光">
+    </div>
+
+</form>
+</div>
+{% endblock %}

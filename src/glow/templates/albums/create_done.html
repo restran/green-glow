@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}相册创建成功{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>相册创建成功 :)</h1>
+<div style="margin-top:30px;">
+<span class="green-link" style="margin-right:10px;">
+<a href="{{ request.HOME_PAGE_URL }}photos/upload/">&gt;上传照片</a>
+</span>
+<span class="green-link" style="margin-right:10px">
+<a href="{{ request.HOME_PAGE_URL }}people/{{request.user.id}}/albums/">&gt;返回相册主页</a>
+</span>
+</div>
+</div>
+{% endblock %}

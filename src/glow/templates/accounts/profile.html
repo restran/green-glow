@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}{{ user.name }}的帐号{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/profile.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>{{ user.name }}的帐号</h1>
+<form name="profileform" method="post" action="">{% csrf_token %}
+
+	{% if edit_success %}
+	<div class="message">设置更新成功</div>
+	{% endif %}
+    <div class="item">
+    <label>名号:</label>
+    <input id="name" name="name" type="text" class="basic-input" style="width:150px" maxlength="60" value={{user.name}}>
+    {% if name_edited %}
+    	{% if name_hasExist %}
+    	<span class="validate-error">该名号已经被使用了</span>
+    	{% endif %}
+    {% else %}
+    <span class="tip">中、英文均可，最长14个英文或7个汉字</span>
+    {% endif %}
+    </div>
+	
+	<div class="item">
+    <label>头像:</label>
+    <img src="{{request.QINIU_IMG_URL}}{{user.avatar_loc}}">
+	<span class="user-info blue-link">
+	<a href="{{ request.HOME_PAGE_URL }}accounts/editavatar/">更改</a>
+	</span>
+    </div>
+
+    <div class="item">
+    <label>登录邮箱:</label>
+	<span class="user-info">{{user.email}}</span>
+    </div>
+    
+	<div class="item">
+    <label>常居地:</label>
+	<span class="user-info">{{user.city}}</span>
+    </div>
+	
+	<div class="item">
+    <label>登录密码:</label>
+	<span class="user-info blue-link">
+	<a href="{{ request.HOME_PAGE_URL }}accounts/editpassword/">更改</a>
+	</span>
+    </div>
+	
+    <div class="item" style="margin-top:25px">
+    <label>&nbsp;</label>
+    <input type="submit" value="更新" id="button" class="btn-submit enabled" title="更新个人信息">
+    </div>
+
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}更改头像{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>更改头像</h1>
+<form name="editform" method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+    
+    <div style="float:left;">
+    <img style="border:1px dashed #999;" src="{{request.QINIU_IMG_URL}}{{avatar_loc}}" alt="绿光">
+    </div>
+    
+    <div style="margin-left:30px;float:left;width:300px;">
+    <div style="margin-bottom:35px;">
+    <span style="width:300px;color:#060;">从电脑中选择你喜欢的图片</span>
+    </div>
+
+    <div style="margin-bottom:15px;">
+    <input type="file" name="pic_avatar" accept="image/*" />
+    </div>
+    <div style="margin-bottom:15px;">
+    <input type="submit" name="pic_submit" value="上传图片" id="pic-submit" title="上传图片">
+    </div>
+    </div>
+    
+    <div style="clear:both;margin-top:50px;float:left;">
+    <input type="submit" name="save" value="保存" id="save" class="btn-white-submit" style="font-weight:bold" title="保存头像">
+    <input type="submit" name="cancel" value="撤销" id="cancel" class="btn-white-submit" style="font-weight:normal" title="撤销变更">
+    </div>
+    
+</form>
+</div>
+{% endblock %}

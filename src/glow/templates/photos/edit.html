@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}修改照片信息{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/common.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/static/css/upload_complete.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>修改照片信息</h1>
+
+<form name="edit_form" method="post" action="">{% csrf_token %}
+    <div class="fleft">
+    
+    <div class="photo-edit">
+	
+	<div class="fleft">
+	<img src="{{request.QINIU_IMG_URL}}{{photo.thumb_loc}}" alt="" />
+	</div>
+	
+	<div style="float:left;">
+	
+	<div class="edit-margin">
+    <label>标题</label>
+    <input id="title" name="title" type="text" placeholder="给照片取个名字吧" class="basic-input edit-input" maxlength="60" value="{{photo.title}}">
+	</div>
+	
+	<div class="edit-margin">
+    <label>描述</label>
+	<textarea name="caption" rows="4" class="basic-input edit-input" placeholder="描述一下照片背后的故事吧">{{photo.caption}}</textarea>
+	</div>
+	
+	<div class="edit-margin">
+    <label>标签</label>
+    <input id="tags" name="tags" type="text" placeholder="给照片加个标签吧，用逗号隔开" class="basic-input edit-input" maxlength="60" value="{{photo.tagStr}}">
+	</div>
+	
+	</div>
+	
+    </div>
+	
+    <div style="clear:both;margin-top:50px;float:right;">
+    <input type="submit" name="update" value="更新" id="save" class="btn-white-submit" style="font-weight:bold" title="更新照片信息">
+    <input type="submit" name="cancel" value="撤销" id="cancel" class="btn-white-submit" style="font-weight:normal" title="撤销变更">
+    </div>
+    
+	</div>
+</form>
+
+</div>
+{% endblock %}

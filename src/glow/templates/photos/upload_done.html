@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}上传成功{% endblock %}
+
+{% block headerlink %}
+<link href="/static/css/login_reg.css" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block content %}
+<div class="content-area">
+<h1>完成：照片已上传到绿光 :)</h1>
+<div style="margin-top:30px;">
+<span class="blue-link">
+<a href="{{ request.HOME_PAGE_URL }}photos/upload/">还有照片要上传</a>
+</span>
+</div>
+</div>
+{% endblock %}
