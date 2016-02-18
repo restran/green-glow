@@ -21,7 +21,7 @@
 
 如果部署网站，需要做如下配置
 
-```
+```py
 # 图片存储在七牛上，需要配置七牛的帐号
 qiniu.conf.ACCESS_KEY = "123"
 qiniu.conf.SECRET_KEY = "456"
@@ -36,7 +36,7 @@ HOME_PAGE_URL = 'http://127.0.0.1:8000/'
 
 数据库默认使用 SQLite，可以修改成 MySQL
 
-```
+```py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -47,7 +47,7 @@ DATABASES = {
 
 在运行网站前，需要先建表，可以执行
 
-```
+```py
 python manage.py syncdb
 ```
 
