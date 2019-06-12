@@ -22,7 +22,7 @@ PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))  # 项目的根目录�
 DEFAULT_CHARSET = 'utf-8'
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('rabbit', '739462304@qq.com'),
 )
 
 MANAGERS = ADMINS
