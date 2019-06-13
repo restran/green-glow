@@ -1,8 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
-
-grnglow/venv
+**/*.swp
+venv
 *.iml
 
 ## Directory-based project format:
