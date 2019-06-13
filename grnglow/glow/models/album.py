@@ -34,7 +34,7 @@ class Album(models.Model):
 
     # 当用户没有指定封面时，如果该相册中有照片，就选择一张作为封面
     def setNewDefaultCover(self):
-        cover_loc = 'default_album_cover.gif'  # 缺省的相册封面
+        cover_loc = '/static/img/default_album_cover.gif'  # 缺省的相册封面
         if self.photo_count > 0:
             from grnglow.glow.models.photo import Photo
             try:

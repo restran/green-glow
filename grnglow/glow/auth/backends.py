@@ -11,7 +11,6 @@ import datetime
 class EmailAuthBackend(object):
     """
     Email Authentication Backend
-    
     Allows a user to sign in using an email/password pair rather than
     a username/password pair.
     """
