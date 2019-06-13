@@ -1,6 +1,5 @@
-
-import django.db.models        
-import sys                     
+import django.db.models
+import sys
 
 appname = 'glow'
 from album import Album
@@ -12,9 +11,9 @@ from tag import Tag
 from usertag import UserTag
 from user import User
 
-__all__ = []     
+__all__ = []
 
-for decl in globals().values(): 
+for decl in globals().values():
     try:
         if decl.__module__.startswith(__name__) and issubclass(decl, django.db.models.Model):
             decl._meta.db_table = decl._meta.db_table.replace('models', appname)

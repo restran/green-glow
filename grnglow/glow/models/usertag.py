@@ -16,10 +16,8 @@ class UserTag(models.Model):
     tag = models.ForeignKey(Tag)
     used_count = models.IntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
-        
     def __unicode__(self):
         return str(self.id)
-    
     class Meta:
         ordering = ['id']
         app_label = 'glow'

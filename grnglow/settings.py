@@ -8,21 +8,21 @@ import qiniu.conf
 
 qiniu.conf.ACCESS_KEY = ""
 qiniu.conf.SECRET_KEY = ""
-# 存在七牛上的图片的文件名前缀
+# 存在腾讯云上的图片的文件名前缀
 QINIU_FILE_PREFIX = 'grnglow'
-# 七牛图片存储的 URL
-QINIU_IMG_URL = ''
+# 腾讯云图片存储的 URL
+QINIU_IMG_URL = r'https://image-1256353254.cos.ap-shanghai.myqcloud.com/'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-HOME_PAGE_URL = 'http://127.0.0.1:8000/'  # 主页的URL
+HOME_PAGE_URL = 'http://127.0.0.1:80/'  # 主页的URL
 
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))  # 项目的根目录地址
 DEFAULT_CHARSET = 'utf-8'
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('rabbit', '739462304@qq.com'),
 )
 
 MANAGERS = ADMINS

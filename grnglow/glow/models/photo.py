@@ -6,7 +6,6 @@ Created on 2012-3-22
 '''
 import datetime
 from StringIO import StringIO
-
 import qiniu.io
 import qiniu.rs
 from PIL import Image
@@ -22,7 +21,6 @@ class Photo(models.Model):
     '''
     照片的数据模型
     '''
-
     owner = models.ForeignKey(User)
     album = models.ForeignKey(Album)
     title = models.CharField(max_length=32, blank=True)
